@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: fernando
+  password: 
+
+development:
+  <<: *default
+  database: read_later_development
+
+test:
+  <<: *default
+  database: read_later_test
