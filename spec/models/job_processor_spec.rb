@@ -17,6 +17,8 @@ RSpec.describe JobProcessor, type: :model do
       job3 = create_job time: job_time, sent: false
       job4 = create_job time: job_time + 1.hour, sent: false
 
+      expect(Job).to receive(:pending_for_current_period).and_return([job1, job2, job3])
+
       JobProcessor.process_jobs_for_current_period
 
       job1.reload

@@ -1,1 +1,1 @@
-Summary = Struct.new(:title, :body)
+Summary = Struct.new(:title, :body, :url)
